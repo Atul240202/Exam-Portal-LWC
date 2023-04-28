@@ -1,0 +1,41 @@
+/* Set padding around the form */
+.slds-m-around_medium {
+	padding: 1rem;
+  }
+  
+  /* Set height for heading */
+  .slds-text-heading_large {
+	height: 3rem;
+  }
+  
+  /* Set margin between columns */
+  .slds-gutters {
+	margin: 0.5rem 0;
+  }
+  
+  /* Set width of columns */
+  .slds-col {
+	width: calc(50% - 0.5rem);
+  }
+  
+  /* Set alignment and margin for buttons */
+  .slds-align_absolute-center {
+	margin: 1rem auto;
+	display: block;
+	text-align: center;
+  }
+  
+  /* Set styling for submit button */
+  .slds-button_brand {
+	background-color: #0070d2;
+	color: white;
+	border-color: #0070d2;
+  }
+  
+  /* Set styling for reset button */
+  .slds-button_neutral {
+	background-color: white;
+	color: #0070d2;
+	border-color: #0070d2;
+  }
+  

@@ -1,0 +1,42 @@
+<template>
+    <lightning-card  variant="Narrow">
+        <!-- <lightning-button-icon  icon-name="utility:down" variant="border-filled" alternative-text="Show More" slot="actions"></lightning-button-icon> -->
+        <!-- <p class="slds-p-horizontal_small">Card Body Narrow (custom component)</p>
+        <p slot="footer">Card Footer</p> -->
+        <div class="main">
+            <h1>Questions</h1>
+            <template for:each={questions} for:item="q">
+                <div key={q.Id}>
+                    <div>
+                        <p>{q.Name}</p>
+                    </div>
+                    <div key={q.Id} class="slds-m-around_medium slds-text-body_regular">
+                        <input name={q.Id} type="radio" value={q.Option_A__c} onchange={handleChange}/>&nbsp; {q.Option_A__c}
+                    </div>
+
+                    <div key={q.Id} class="slds-m-around_medium slds-text-body_regular">
+                        <input name={q.Id} type="radio" value={q.Option_B__c} onchange={handleChange}/>&nbsp; {q.Option_B__c}
+                    </div>
+
+                    <div key={q.Id} class="slds-m-around_medium slds-text-body_regular">
+                        <input name={q.Id} type="radio" value={q.Option_C__c} onchange={handleChange}/>&nbsp; {q.Option_C__c}
+                    </div>
+
+                    <div key={q.Id} class="slds-m-around_medium slds-text-body_regular">
+                        <input name={q.Id} type="radio" value={q.Option_D__c} onchange={handleChange}/>&nbsp; {q.Option_D__c}
+                    </div>
+                </div>
+            </template>
+            <div class="button">
+                <div class="submit">
+                    <lightning-button  variant="success" label="Submit" title="Submit" onclick={handleSubmit}></lightning-button>
+                </div>
+                <div class="result">
+                    <template lwc:if={isSubmit}>
+                        <lightning-button  variant="brand" label="Go Results &rarr;" title="ResultButton" onclick={handleResult}></lightning-button>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

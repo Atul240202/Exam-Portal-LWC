@@ -1,0 +1,32 @@
+<template>
+  <lightning-card  variant="Narrow">
+      <div>
+          <table>
+              <tr>
+                  <th>Name</th>
+                  <th>Scheduled Date</th>
+                  <th>Actions</th>
+              </tr>
+              <template for:each={exams} for:item="ex">
+                      <tr key={ex.Id}>
+                          <td>{ex.Exam_Name__c}</td>
+                          <td>{ex.Select_Date__c}</td>
+                          <td>
+                              <template lwc:if={ex.IsSubmitted__c}>
+                                  <lightning-button variant="base" label="Attempted" title={ex.Id} onclick={handleClick}></lightning-button>
+                              </template>
+                              <template lwc:else>
+                                  <lightning-button variant="success" label="Start" title={ex.Id} onclick={handleClick}></lightning-button>
+                              </template>
+                          </td>
+                          <td>
+                              <template lwc:if={ex.IsSubmitted__c}>
+                                  <lightning-button variant="brand" label="Go to Result" title={ex.Id} onclick={handleResult}></lightning-button>
+                              </template>
+                          </td>   
+                      </tr>
+                  </template>
+          </table>
+      </div>
+  </lightning-card>
+</template>

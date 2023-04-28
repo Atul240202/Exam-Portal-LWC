@@ -1,0 +1,62 @@
+<template>
+  <lightning-card title="Contact Detail associated to Account (LWC)">
+    <div class="slds-m-around_medium">
+      <lightning-combobox label="Select Account" value={selectedAccountId} options={accountOptions} onchange={handleAccountChange}>
+      </lightning-combobox>
+      <template if:true={contacts.length}>
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+          <thead>
+            <tr class="slds-line-height_reset">
+              <th class="slds-text-title_caps" scope="col">
+                <div class="slds-truncate" title="First Name">First Name</div>
+              </th>
+              <th class="slds-text-title_caps" scope="col">
+                <div class="slds-truncate" title="Last Name">Last Name</div>
+              </th>
+              <th class="slds-text-title_caps" scope="col">
+                <div class="slds-truncate" title="Email">Email</div>
+              </th>
+              <th class="slds-text-title_caps" scope="col">
+                <div class="slds-truncate" title="Phone No.">Phone No.</div>
+              </th>
+              <th class="slds-text-title_caps" scope="col">
+                <div class="slds-truncate" title="Office Country">Office Country</div>
+              </th>
+              <th class="" scope="col">
+                <div class="slds-truncate" title="Action">Action</div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <template for:each={contacts} for:item="contact">
+              <tr key={contact.Id}>
+                <td data-label="First Name">
+                  <div class="slds-truncate" title={contact.FirstName}>{contact.FirstName}</div>
+                </td>
+                <td data-label="Last Name">
+                  <div class="slds-truncate" title={contact.LastName}>{contact.LastName}</div>
+                </td>
+                <td data-label="Email">
+                  <div class="slds-truncate" title={contact.Email}>{contact.Email}</div>
+                </td>
+                <td data-label="Phone No.">
+                  <div class="slds-truncate" title={contact.Phone}>{contact.Phone}</div>
+                </td>
+                <td data-label="Office Country">
+                  <div class="slds-truncate" title={contact.AJ_Asgn_Office_Country__c}>{contact.AJ_Asgn_Office_Country__c}</div>
+                </td>
+                <td data-label="Action">
+                  <lightning-button-icon data-contact-id={contact.Id} icon-name="utility:edit" variant="border-filled" alternative-text="Edit" title="Edit" onclick={handleEditClick} value={contact.Id}></lightning-button-icon>
+                </td>
+
+              </tr>
+            </template>
+          </tbody>
+        </table>
+      </template>
+      <template if:false={contacts.length}>
+        <p>No contacts found for the selected account</p>
+      </template>
+    </div>
+  </lightning-card>
+</template>

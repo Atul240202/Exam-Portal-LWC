@@ -1,0 +1,47 @@
+<aura:component controller="AJ_AuraImpl" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="accounts" type="Account[]" />
+    <aura:attribute name="selectedAccountId" type="String" />
+    <aura:attribute name="contacts" type="Contact[]" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    
+    
+    <lightning:card title="Contact Records">
+        <div class="slds-form-element">
+            <label class="slds-form-element__label" for="select-01">Choose a Account</label>
+            <div class="slds-form-element__control">
+                <lightning:select name="selectAccount" label="" value="{!v.selectedAccountId}" onchange="{!c.handleAccountChange}">
+                    <option value="">--None--</option>
+                    <aura:iteration items="{!v.accounts}" var="account">
+                        <option value="{!account.Id}">{!account.Name}</option>
+                    </aura:iteration>
+                </lightning:select>
+            </div>
+        </div>
+        <br />
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+            <thead>
+                <tr class="slds-text-title_caps">
+                    <th scope="col"><div class="slds-truncate">First Name</div></th>
+                    <th scope="col"><div class="slds-truncate">Last Name</div></th>
+                    <th scope="col"><div class="slds-truncate">Email</div></th>
+                    <th scope="col"><div class="slds-truncate">Phone</div></th>
+                    <th scope="col"><div class="slds-truncate">AJ Office Country</div></th>
+                    <th scope="col"><div class="slds-truncate">Action</div></th>
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.contacts}" var="contact">
+                    <tr>
+                        <td><div class="slds-truncate">{!contact.FirstName}</div></td>
+                        <td><div class="slds-truncate">{!contact.LastName}</div></td>
+                        <td><div class="slds-truncate">{!contact.Email}</div></td>
+                        <td><div class="slds-truncate">{!contact.Phone}</div></td>
+                        <td><div class="slds-truncate">{!contact.AJ_Asgn_Office_Country__c}</div></td>
+                        <td><lightning:button label="Edit" variant="brand" onclick="{!c.editContact}" value="{!contact.Id}"/></td>
+                    </tr>
+                </aura:iteration>
+            </tbody>
+        </table>
+    </lightning:card>
+</aura:component>

@@ -1,0 +1,29 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Results" icon-name="standard:account">
+        <div class="main">
+            <table>
+                <tr>
+                    <th>Question Description</th>
+                    <th>Correct Answer</th>
+                    <th>Choosen Answer</th>
+                </tr>
+                <template for:each={answer} for:item="ans">
+                    <tr key={ans.Id}>
+                        <td>{ans.Question_Description__c}</td>
+                        <td>{ans.Correct_Answer__c}</td>
+                        <td>{ans.Choosed_Option__c}</td>
+                    </tr>
+                </template>
+            </table>
+            <p>&#10038;Per Question 5 marks</p> 
+            <div class="button">
+                <h1> Score: {score}</h1>
+                <div class="back">
+                    <lightning-button variant="brand" label="&larr;Back" title="Back" onclick={handleClick}></lightning-button>
+                </div>
+            </div>
+
+            
+        </div>
+    </lightning-card>
+</template>

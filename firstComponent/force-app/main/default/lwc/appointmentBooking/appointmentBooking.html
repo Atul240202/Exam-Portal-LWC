@@ -1,0 +1,48 @@
+<template>
+    <div class="slds-m-around_medium slds-wrap">
+        <h1 class="slds-align_absolute-center slds-text-heading_large" style="height:3rem">Patient Form</h1>
+        <lightning-record-edit-form object-api-name="Lead" onsubmit={handleSubmit} onreset={handleReset}>
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col">
+                    <label>Select Hospital Name</label>
+                    <select class="slds-select" onchange={handleHospitalChange}>
+                        <option>Select Account</option>
+                        <template for:each={hospitalOptions} for:item="account" >
+                            <option key={account.Id} value={account.Name}>{account.Name}</option>
+                        </template>
+                    </select>
+                </div>
+                <div class="slds-col">
+                    <lightning-input label="First Name" value={rec.FirstName}
+                        onchange={handleFirstNameChange}></lightning-input>
+                </div>
+            </div>
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col">
+                    <lightning-input label="Last Name" value={rec.LastName}
+                        onchange={handleLastNameChange}></lightning-input>
+                </div>
+                <div class="slds-col">
+                    <lightning-input label="Email" type="email" value={rec.Email}
+                        onchange={handleEmailChange}></lightning-input>
+                </div>
+            </div>
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-input label="Phone" type="tel" value={rec.Phone}
+                        onchange={handlePhoneChange}></lightning-input>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-input label="Zip Code" value={rec.PostalCode}
+                        onchange={handlePostalCodeChange}></lightning-input>
+                </div>
+            </div>
+            <div class="slds-grid slds-gutters">
+                <lightning-button class="slds-col slds-size_1-of-2 slds-align_absolute-center" type="submit"
+                    label="Submit" variant="brand"></lightning-button>
+                <lightning-button class="slds-col slds-size_1-of-2 slds-align_absolute-center" type="reset"
+                    label="Reset" ></lightning-button>
+            </div>
+        </lightning-record-edit-form>
+    </div>
+</template>

@@ -1,0 +1,49 @@
+.dummy{
+    color : black;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table{
+    border: 1px solid #38788a;
+}
+
+th, td {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  border: 1px solid #38788a;
+  width: 10rem;
+  text-align: center;
+}
+
+th{
+    font-size: 1rem;
+    color: #38788a;
+}
+
+h1{
+    font-size: 2rem;
+    color: #38788a;
+}
+
+p{
+    font-size: 0.6rem;
+    color: red;
+}
+
+td{
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.button{
+    margin-top: 2rem;
+    display: flex;
+}
+
+.back{
+    padding-left: 64rem;
+}

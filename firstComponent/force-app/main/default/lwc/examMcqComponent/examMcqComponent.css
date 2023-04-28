@@ -1,0 +1,29 @@
+.dummy{
+    color : black;
+}
+
+.main{
+    margin-left: 4rem;
+}
+
+h1{
+    font-size: 2rem;
+}
+
+p{
+    font-size: 1rem;
+    color: #38788a;
+}
+
+.button{
+    display: flex;
+}
+
+.submit{
+    padding-top: 2rem;
+}
+
+.result{
+    padding-top: 2rem;
+    padding-left: 60rem;
+}

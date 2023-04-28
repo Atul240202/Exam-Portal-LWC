@@ -1,0 +1,44 @@
+<template>
+  <lightning-card title="Patient Lead Search">
+    <div class="slds-m-around_medium">
+      <lightning-input type="search" label="Search" value={searchTerm} onchange={handleSearchTermChange}></lightning-input>
+      <template if:true={searchTerm}>
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+          <thead>
+            <tr class="slds-line-height_reset">
+              <th class="" scope="col">
+                <div class="slds-truncate" title="First Name">First Name</div>
+              </th>
+              <th class="" scope="col">
+                <div class="slds-truncate" title="Last Name">Last Name</div>
+              </th>
+              <th class="" scope="col">
+                <div class="slds-truncate" title="Company">Company</div>
+              </th>
+              <th class="" scope="col">
+                <div class="slds-truncate" title="Email">Email</div>
+              </th>
+              <th class="" scope="col">
+                <div class="slds-truncate" title="Phone">Phone</div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <template for:each={leads.data} for:item="lead">
+              <tr key={lead.Id}>
+                <td data-label="First Name">{lead.FirstName}</td>
+                <td data-label="Last Name">{lead.LastName}</td>
+                <td data-label="Company">{lead.Company}</td>
+                <td data-label="Email">{lead.Email}</td>
+                <td data-label="Phone">{lead.Phone}</td>
+              </tr>
+            </template>
+          </tbody>
+        </table>
+      </template>
+      <template if:true={leads.error}>
+        <p>Error: {leads.error}</p>
+      </template>
+    </div>
+  </lightning-card>
+</template>

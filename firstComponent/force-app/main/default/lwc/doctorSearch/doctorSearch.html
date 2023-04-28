@@ -1,0 +1,66 @@
+<template>
+    <div class="slds-m-around_medium">
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-2 slds-p-right_small">
+                <lightning-input type="text"
+                                 label="Doctor Name"
+                                 value={searchDoctorName}
+                                 onchange={handleDoctorNameChange}></lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-2 slds-p-left_small">
+                <lightning-input type="text"
+                                 label="Specialty"
+                                 value={searchSpecialty}
+                                 onchange={handleSpecialtyChange}></lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-2 slds-p-right_small">
+                <lightning-button label="Reset"
+                                  onclick={handleResetClick}
+                                  variant="neutral"></lightning-button>
+            </div>
+            <div class="slds-col slds-size_1-of-2 slds-p-left_small">
+                <lightning-button label="Search"
+                                  onclick={handleSearchClick}
+                                  variant="brand"></lightning-button>
+            </div>
+        </div>
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-m-top_small">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Doctor Name">Doctor Name</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Zip Code">Zip Code</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Years of Experience">Years of Experience</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Speciality">Speciality</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <template if:true={contacts}>
+                    <template for:each={contacts} for:item="contact">
+                        <tr key={contact.Id}>
+                            <td>
+                                <div class="slds-truncate">{contact.Name}</div>
+                            </td>
+                            <td>
+                                <div class="slds-truncate">{contact.AJ_Pin_Code__c}</div>
+                            </td>
+                            <td>
+                                <div class="slds-truncate">{contact.AJ_Years_of_Experience__c}</div>
+                            </td>
+                            <td>
+                                <div class="slds-truncate">{contact.AJ_Speciality__c}</div>
+                            </td>
+                        </tr>
+                    </template>
+                </template>
+            </tbody>
+        </table>
+    </div>
+</template> 

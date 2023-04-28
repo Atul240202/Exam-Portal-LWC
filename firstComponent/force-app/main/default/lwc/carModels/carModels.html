@@ -1,0 +1,20 @@
+<template>
+    <div class="container">
+        <lightning-card class="car-title" title="Car Details">
+            <template if:true={carModels}>
+                <template for:each={carModels} for:item="carModel">
+                    <div key={carModel.Id} class="box">
+                        <!-- <div class="car-name">Car Name: {carModel.fields.Car__c.value}</div> -->
+                        <div class="car-model">Car Model Name: {carModel.fields.Name.value}</div>
+                        <div class="price">On-Road Price: {carModel.fields.On_Road_Price__c.value}</div>
+                        <div class="color">Car Color: {carModel.fields.Color__c.value}</div>
+                        <div class="specs">Car Specs: {carModel.fields.Car_Specs__c.value}</div>
+                    </div>
+                </template>
+            </template>
+            <template if:false={carModels}>
+                No car models available
+            </template>
+        </lightning-card>
+    </div>
+</template>

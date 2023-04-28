@@ -1,0 +1,20 @@
+.dummy{
+	color : black;
+  }
+  
+  div{
+	align-items: center;
+	margin-left: 10rem;
+  }
+  
+  th, td {
+	padding-top: 10px;
+	padding-bottom: 20px;
+	padding-left: 30px;
+	padding-right: 40px;
+  }
+  
+  th{
+	font-size: 1rem;
+  }
+  

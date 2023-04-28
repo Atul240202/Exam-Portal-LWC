@@ -1,0 +1,60 @@
+    /* Search container */
+    .slds-m-around_medium {
+    	margin: 1rem;
+    }
+
+    /* Grid layout */
+    .slds-grid {
+    	display: grid;
+    	grid-template-columns: repeat(2, 1fr);
+    	gap: 1rem;
+    }
+
+    /* Input field */
+    .slds-input {
+    	padding: 0.5rem;
+    	border: 1px solid #ccc;
+    	border-radius: 0.25rem;
+    }
+
+    /* Buttons */
+    .slds-button {
+    	padding: 0.5rem 1rem;
+    	border-radius: 0.25rem;
+    	text-transform: uppercase;
+    	font-weight: bold;
+    	cursor: pointer;
+    }
+
+    /* Reset button */
+    .slds-button_neutral {
+    	background-color: #ccc;
+    	color: #333;
+    }
+
+    /* Search button */
+    .slds-button_brand {
+    	background-color: #0070d2;
+    	color: #fff;
+    }
+
+    /* Table */
+    .slds-table {
+    	border-collapse: collapse;
+    	width: 100%;
+    	margin-top: 1rem;
+    }
+
+    /* Table header */
+    .slds-table thead th {
+    	background-color: #f2f2f2;
+    	border: 1px solid #ccc;
+    	padding: 0.5rem;
+    	text-align: left;
+    }
+
+    /* Table cells */
+    .slds-table td {
+    	border: 1px solid #ccc;
+    	padding: 0.5rem;
+    }
